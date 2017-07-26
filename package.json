@@ -82,10 +82,10 @@
     "request": "browser-request"
   },
   "dependencies": {
-    "bitcore-lib": "^0.14",
-    "bitcore-node": "~3.1.0",
-    "insight-api": "^0.4.0",
-    "insight-ui": "^0.4.0"
+    "bitcore-lib": "git+https://git@github.com/Werdffelynir/bitcore-lib.git",
+    "bitcore-node": "git+https://git@github.com/Werdffelynir/bitcore-node.git",
+    "insight-api": "git+https://git@github.com/Werdffelynir/insight-api.git",
+    "insight-ui": "git+https://git@github.com/Werdffelynir/insight-ui.git"
   },
   "license": "MIT",
   "devDependencies": {
