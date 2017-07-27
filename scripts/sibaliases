@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+set -e
+
+if [ ! -f $0 ]; then
+  echo "Error: Path not found!\n"
+  exit 2
+fi
+
+path_f=`readlink -e "$0"`
+path_d=`dirname "$path_f"`
+path_r=`dirname "$path_d"`
+
+ln -sfr ${path_r}/bin/bitcore ${path_r}/bin/sibcore
+ln -sfr ${path_r}/bin/bitcored ${path_r}/bin/sibcored
+
+echo -e "Aliases sibcore, sibcored is created!\n"
