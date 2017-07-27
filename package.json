@@ -5,7 +5,7 @@
   "author": "BitPay <dev@bitpay.com>",
   "main": "index.js",
   "scripts": {
-    "preinstall": "./scripts/sibaliases",
+    "postinstall": "./scripts/sibaliases",
     "test": "./node_modules/.bin/mocha test/** --recursive",
     "build-deb": "./scripts/build-deb"
   },
