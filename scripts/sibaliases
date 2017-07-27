@@ -15,4 +15,10 @@ path_r=`dirname "$path_d"`
 ln -sfr ${path_r}/bin/bitcore ${path_r}/bin/sibcore
 ln -sfr ${path_r}/bin/bitcored ${path_r}/bin/sibcored
 
+# temp hack, need fix dependencies
+rm -r ${path_r}/bitcore/node_modules/insight-api/node_modules/bitcore-lib /
+rm -r ${path_r}/bitcore/node_modules/bitcore-node/node_modules/bitcore-lib /
+rm -r ${path_r}/bitcore/node_modules/insight-api/node_modules/bitcore-message/node_modules/bitcore-lib
+
+
 echo -e "Aliases sibcore, sibcored is created!\n"
