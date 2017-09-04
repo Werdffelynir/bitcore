@@ -1,12 +1,12 @@
-# setup a centos image with bitcore binary components
-FROM centos:latest
+FROM ubuntu:16.04
 MAINTAINER Chris Kleeschulte <chrisk@bitpay.com>
-RUN yum -y install git curl which xz tar findutils
-RUN groupadd bitcore
-RUN useradd bitcore -m -s /bin/bash -g bitcore
-ENV HOME /home/bitcore
-USER bitcore
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
-RUN /bin/bash -l -c "nvm install v4 && nvm alias default v4"
-RUN /bin/bash -l -c "npm install bitcore -g"
-
+RUN apt-get update
+RUN apt-get -y install g++ make python git curl tar findutils libzmq3-dev build-essential
+RUN groupadd sibcore
+RUN useradd sibcore -m -s /bin/bash -g sibcore
+ENV HOME /home/sibcore
+ENV NODE_VERSION 4
+ENV NVM_DIR ${HOME}/.nvm
+USER sibcore
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+RUN . ${NVM_DIR}/nvm.sh && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && npm install git+https://git@github.com/Werdffelynir/bitcore.git -g
