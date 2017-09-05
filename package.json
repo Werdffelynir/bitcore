@@ -11,7 +11,9 @@
   },
   "bin": {
     "bitcore": "./bin/bitcore",
-    "bitcored": "./bin/bitcored"
+    "bitcored": "./bin/bitcored",
+    "sibcore": "./bin/sibcore",
+    "sibcored": "./bin/sibcored"
   },
   "contributors": [
     {
